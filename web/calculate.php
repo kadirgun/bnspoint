@@ -11,7 +11,7 @@
 	$bracelet = array();
 	$belt = array();
 
-	if(strpos("HongmoonLevel", $profile) !== false){
+	if(strpos($profile, "HongmoonLevel") !== false){
 		$level = explode("HongmoonLevel ", $profile)[1];
 		$level = explode("<", $level)[0];
 		$level = intval($level);
