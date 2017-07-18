@@ -40,7 +40,7 @@
 		$weapon["point"] = intval($weapon["stage"])*2;
 		$weapon["point"] += 12;
 	}else{
-		$weapon["name"] = "Unknown";
+		$weapon["name"] = "Unrated";
 		$weapon["stage"] = 0;
 		$weapon["point"] = 0;
 	}
@@ -50,7 +50,7 @@
 		$necklace["stage"] = getStage("Oath",$info);
 		$necklace["point"] = intval($necklace["stage"])*2;
 	}else{
-		$necklace["name"] = "Unknown";
+		$necklace["name"] = "Unrated";
 		$necklace["stage"] = 0;
 		$necklace["point"] = 0;
 	}
@@ -84,7 +84,7 @@
 		$ring["stage"] = getStage("Penumbra",$info);
 		$ring["point"] = intval($ring["stage"])*4;
 	}else{
-		$ring["name"] = "Unknown";
+		$ring["name"] = "Unrated";
 		$ring["stage"] = 0;
 		$ring["point"] = 0;
 	}
@@ -114,7 +114,7 @@
 		$earring["stage"] = getStage("Igneous",$info);
 		$earring["point"] = intval($earring["stage"])*4;
 	}else{
-		$earring["name"] = "Unknown";
+		$earring["name"] = "Unrated";
 		$earring["stage"] = 0;
 		$earring["point"] = 0;
 	}
@@ -128,7 +128,7 @@
 		$bracelet["stage"] = getStage("Tiger",$info);
 		$bracelet["point"] = intval($bracelet["stage"])*4;
 	}else{
-		$bracelet["name"] = "Unknown";
+		$bracelet["name"] = "Unrated";
 		$bracelet["stage"] = 0;
 		$bracelet["point"] = 0;
 	}
@@ -138,7 +138,7 @@
 		$belt["stage"] = getStage("Eternity",$info);
 		$belt["point"] = intval($belt["stage"])*3;
 	}else{
-		$belt["name"] = "Unknown";
+		$belt["name"] = "Unrated";
 		$belt["stage"] = 0;
 		$belt["point"] = 0;
 	}
@@ -162,7 +162,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="container">
-		<div class="page-header"> <h1><?php echo $username ?> <small> <?php echo $total ?>P</small></h1> </div>
+		<div class="page-header"> <h1><?php echo $total ?>P <small> <?php echo $username ?></small></h1> </div>
 		<div class="row">
 			<div class="col-md-12">
 			    <table class="table">
