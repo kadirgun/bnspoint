@@ -1,6 +1,8 @@
 <?php
 	$username = $_GET['username'];
 	$info = file_get_contents("http://eu-bns.ncsoft.com/ingame/bs/character/data/equipments?c=".urlencode($username));
+	$profile = file_get_contents("http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=".urlencode($username));
+
 	$total = 0;
 	$weapon = array();
 	$necklace = array();
@@ -8,6 +10,15 @@
 	$earring = array();
 	$bracelet = array();
 	$belt = array();
+
+	if(strpos("HongmoonLevel", $profile) !== false){
+		$level = explode("HongmoonLevel ", $profile)[1];
+		$level = explode("<", $level)[0];
+		$level = intval($level);
+	}else{
+		$level = 0;
+	}
+	
 
 	function getStage($name,$info){
 		$stage = explode($name, $info)[1];
@@ -162,7 +173,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="container">
-		<div class="page-header"> <h1><?php echo $total ?>P <small> <?php echo $username ?></small></h1> </div>
+		<div class="page-header"> <h1><?php echo $total ?>P <small> <?php echo $username ?> (HM<?php echo $level ?>)</small></h1> </div>
 		<div class="row">
 			<div class="col-md-12">
 			    <table class="table">
@@ -171,27 +182,27 @@
 			    	<th>Puan</th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $weapon["name"] ?> Weapon Stage <?php echo $weapon["stage"] ?></td>
+			    	<td><?php echo $weapon["name"] ?> Weapon - Stage <?php echo $weapon["stage"] ?></td>
 			    	<th><?php echo $weapon["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $necklace["name"] ?> Necklace Stage <?php echo $necklace["stage"] ?></td>
+			    	<td><?php echo $necklace["name"] ?> Necklace - Stage <?php echo $necklace["stage"] ?></td>
 			    	<th><?php echo $necklace["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $ring["name"] ?> Ring Stage <?php echo $ring["stage"] ?></td>
+			    	<td><?php echo $ring["name"] ?> Ring - Stage <?php echo $ring["stage"] ?></td>
 			    	<th><?php echo $ring["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $earring["name"] ?> Earring Stage <?php echo $earring["stage"] ?></td>
+			    	<td><?php echo $earring["name"] ?> Earring - Stage <?php echo $earring["stage"] ?></td>
 			    	<th><?php echo $earring["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $bracelet["name"] ?> Bracelet Stage <?php echo $bracelet["stage"] ?></td>
+			    	<td><?php echo $bracelet["name"] ?> Bracelet - Stage <?php echo $bracelet["stage"] ?></td>
 			    	<th><?php echo $bracelet["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $belt["name"] ?> Belt Stage <?php echo $belt["stage"] ?></td>
+			    	<td><?php echo $belt["name"] ?> Belt - Stage <?php echo $belt["stage"] ?></td>
 			    	<th><?php echo $belt["point"] ?></th>
 			    </tr>
 			    </table>
