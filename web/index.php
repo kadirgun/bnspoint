@@ -142,7 +142,7 @@
 		$belt["point"] = 0;
 	}
 
-	print_r($belt);
+	//print_r($belt);
 ?>
 
 <html>
