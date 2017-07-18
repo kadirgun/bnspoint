@@ -171,27 +171,27 @@
 			    	<th>Puan</th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $weapon["name"] ?></td>
+			    	<td><?php echo $weapon["name"] ?> Weapon</td>
 			    	<th><?php echo $weapon["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $necklace["name"] ?></td>
+			    	<td><?php echo $necklace["name"] ?> Necklace</td>
 			    	<th><?php echo $necklace["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $ring["name"] ?></td>
+			    	<td><?php echo $ring["name"] ?> Ring</td>
 			    	<th><?php echo $ring["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $earring["name"] ?></td>
+			    	<td><?php echo $earring["name"] ?> Earring</td>
 			    	<th><?php echo $earring["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $bracelet["name"] ?></td>
+			    	<td><?php echo $bracelet["name"] ?> Bracelet</td>
 			    	<th><?php echo $bracelet["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $belt["name"] ?></td>
+			    	<td><?php echo $belt["name"] ?> Belt</td>
 			    	<th><?php echo $belt["point"] ?></th>
 			    </tr>
 			    </table>
