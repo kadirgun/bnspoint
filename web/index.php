@@ -112,6 +112,10 @@
 		$earring["name"] = "Igneous";
 		$earring["stage"] = getStage("Igneous",$info);
 		$earring["point"] = intval($earring["stage"])*4;
+	}else{
+		$earring["name"] = "Unknown";
+		$earring["stage"] = 0;
+		$earring["point"] = 0;
 	}
 
 	if(strpos($info, "Divine Dragon Bracelet") !== false){
@@ -122,13 +126,78 @@
 		$bracelet["name"] = "Tiger";
 		$bracelet["stage"] = getStage("Tiger",$info);
 		$bracelet["point"] = intval($bracelet["stage"])*4;
+	}else{
+		$bracelet["name"] = "Unknown";
+		$bracelet["stage"] = 0;
+		$bracelet["point"] = 0;
 	}
 
 	if(strpos($info, "Eternity Belt") !== false){
 		$belt["name"] = "Eternity";
 		$belt["stage"] = getStage("Eternity",$info);
 		$belt["point"] = intval($belt["stage"])*3;
+	}else{
+		$belt["name"] = "Unknown";
+		$belt["stage"] = 0;
+		$belt["point"] = 0;
 	}
 
 	print_r($belt);
 ?>
+
+<html>
+	<head>
+	<title>bnspoint</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+</head>
+	<body>
+		<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Ana Sayfa</a></li>
+               </ul>
+      <form class="navbar-form navbar-right number-form">
+        <div class="form-group">
+          <input type="tel" class="form-control" id="tel" placeholder="Numara" name="tel">
+        </div>
+        <button type="submit" class="btn btn-default">Sorgula</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>		<div class="container">
+	<ol class="breadcrumb">
+	  <li class="active">Ana Sayfa</li>
+	</ol>
+	<div class="page-header"> <h1>Numara Sorgulama <small>Kimin Numarası?</small></h1> </div>
+	<div class="row">
+		<div class="col-md-12">
+		    <div class="well text-center">
+		        <form role="form" class="form number-form">
+		        	<div class="row">
+					  <div class="col-lg-12">
+					    <div class="input-group">
+					      <input type="tel" id="tel" name="tel" class="form-control" placeholder="Numara">
+					      <span class="input-group-btn">
+					        <button class="btn btn-primary" type="submit">Sorgula</button>
+					      </span>
+					    </div>
+					  </div>
+					</div>
+		        </form>
+		    </div>
+		</div>
+	</div>
+</div>	
+		<script type="text/javascript" src="/assets/plugins/jquery.min.js"></script>
+		<script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/assets/js/main.js"></script>
+</body>
+</html>
