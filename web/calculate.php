@@ -1,6 +1,7 @@
 <?php
 	$username = $_GET['username'];
 	$info = file_get_contents("http://eu-bns.ncsoft.com/ingame/bs/character/data/equipments?c=".urlencode($username));
+	$total = 0;
 	$weapon = array();
 	$necklace = array();
 	$ring = array();
@@ -142,7 +143,7 @@
 		$belt["point"] = 0;
 	}
 
-	//print_r($belt);
+	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"];
 ?>
 
 <html>
@@ -161,7 +162,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="container">
-		<div class="page-header"> <h1>Blade & Soul <small> Puan Hesaplama</small></h1> </div>
+		<div class="page-header"> <h1><?php echo $username ?> <small> <?php echo $total ?>P</small></h1> </div>
 		<div class="row">
 			<div class="col-md-12">
 			    <table class="table">
