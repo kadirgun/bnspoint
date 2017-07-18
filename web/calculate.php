@@ -10,6 +10,7 @@
 	$earring = array();
 	$bracelet = array();
 	$belt = array();
+	$soul = array();
 
 	if(strpos($profile, "HongmoonLevel") !== false){
 		$level = explode("HongmoonLevel ", $profile)[1];
@@ -156,7 +157,49 @@
 		$belt["point"] = 0;
 	}
 
-	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"] + $levelpoint;
+	if(strpos($info, ">Hongmoon Energy") !== false){
+		$soul["name"] = "Hongmoon Energy";
+		$soul["stage"] = getStage("Hongmoon Energy",$info);
+		$soul["point"] = intval($soul["stage"])*5;
+	}else if(strpos($info, ">Awakened Hongmoon Critical Energy") !== false){
+		$soul["name"] = "Awakened Hongmoon Critical Energy";
+		$soul["stage"] = 10;
+		$soul["point"] = 15*5;
+	}else if(strpos($info, ">Awakened Ascending Soul") !== false){
+		$soul["name"] = "Awakened Ascending Soul";
+		$soul["stage"] = 10;
+		$soul["point"] = 15*5;
+	}else if(strpos($info, ">True Hongmoon Energy") !== false){
+		$soul["name"] = "True Hongmoon Energy";
+		$soul["stage"] = 10;
+		$soul["point"] = 20*5;
+	}else if(strpos($info, ">True Ascending Soul") !== false){
+		$soul["name"] = "True Ascending Soul";
+		$soul["stage"] = 10;
+		$soul["point"] = 20*5;
+	}else if(strpos($info, ">Transcendent Soul") !== false){
+		$soul["name"] = "Transcendent Soul";
+		$soul["stage"] = getStage("Transcendent Soul",$info);
+		$soul["point"] = (20+$soul["stage"])*5;
+	}else if(strpos($info, ">Cosmic Soul") !== false){
+		$soul["name"] = "Cosmic Soul";
+		$soul["stage"] = getStage("Cosmic Soul",$info);
+		$soul["point"] = (20+$soul["stage"])*5;
+	}else if(strpos($info, ">Awakened Transcendent Soul") !== false){
+		$soul["name"] = "Awakened Transcendent Soul";
+		$soul["stage"] = getStage("Awakened Transcendent Soul",$info);
+		$soul["point"] = (25+$soul["stage"])*5;
+	}else if(strpos($info, ">Awakened Cosmic Soul") !== false){
+		$soul["name"] = "Awakened Cosmic Soul";
+		$soul["stage"] = getStage("Awakened Cosmic Soul",$info);
+		$soul["point"] = (25+$soul["stage"])*5;
+	}else{
+		$soul["name"] = "Unrated";
+		$soul["stage"] = 0;
+		$soul["point"] = 0;
+	}
+
+	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"] + $soul["point"] + $levelpoint;
 ?>
 
 <html>
@@ -206,6 +249,10 @@
 			    <tr>
 			    	<td><?php echo $belt["name"] ?> Belt - Stage <?php echo $belt["stage"] ?></td>
 			    	<th><?php echo $belt["point"] ?></th>
+			    </tr>
+			    <tr>
+			    	<td><?php echo $soul["name"] ?> - Stage <?php echo $soul["stage"] ?></td>
+			    	<th><?php echo $soul["point"] ?></th>
 			    </tr>
 			    </table>
 			</div>
