@@ -212,6 +212,10 @@
 		$pet["name"] = "Awakened Pet Aura";
 		$pet["stage"] = getStage("Awakened Pet Aura",$info);;
 		$pet["point"] = intval($pet["stage"])*3;
+	}else if(preg_match("/Awakened (\w+) Pet/", $info)){
+		$pet["name"] = "Awakened X Pet";
+		$pet["stage"] = getStage(" Pet ",$info);
+		$pet["point"] = intval($pet["stage"])*3;
 	}else{
 		$pet["name"] = "Unrated Pet";
 		$pet["stage"] = 0;
