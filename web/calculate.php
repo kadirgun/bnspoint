@@ -11,6 +11,7 @@
 	$bracelet = array();
 	$belt = array();
 	$soul = array();
+	$pet = array();
 
 	if(strpos($profile, "HongmoonLevel") !== false){
 		$level = explode("HongmoonLevel ", $profile)[1];
@@ -194,12 +195,30 @@
 		$soul["stage"] = getStage("Awakened Cosmic Soul",$info);
 		$soul["point"] = (25+$soul["stage"])*5;
 	}else{
-		$soul["name"] = "Unrated";
+		$soul["name"] = "Unrated Soul";
 		$soul["stage"] = 0;
 		$soul["point"] = 0;
 	}
 
-	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"] + $soul["point"] + $levelpoint;
+	if(strpos($info, ">Unleashed Pet Aura") !== false){
+		$pet["name"] = "Unleashed Pet Aura";
+		$pet["stage"] = 0;
+		$pet["point"] = 20*3;
+	}else if(strpos($info, ">Ultimate Pet Aura") !== false){
+		$pet["name"] = "Ultimate Pet Aura";
+		$pet["stage"] = 0;
+		$pet["point"] = 11*3;
+	}else if(strpos($info, ">Awakened Pet Aura") !== false){
+		$pet["name"] = "Awakened Pet Aura";
+		$pet["stage"] = getStage("Awakened Pet Aura",$info);;
+		$pet["point"] = intval($pet["stage"])*3;
+	}else{
+		$pet["name"] = "Unrated Pet";
+		$pet["stage"] = 0;
+		$pet["point"] = 0;
+	}
+
+	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"] + $soul["point"] + $pet["point"] + $levelpoint;
 ?>
 
 <html>
@@ -218,7 +237,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="container">
-		<div class="page-header"> <h1><?php echo $total ?>P <small> <?php echo $username ?> (HM<?php echo $level ?>=><?php echo $levelpoint; ?>)</small></h1> </div>
+		<div class="page-header"> <h1><?php echo $total ?>P <small> <?php echo $username ?> (HM<?php echo $level ?>=><?php echo $levelpoint; ?>P)</small></h1> </div>
 		<div class="row">
 			<div class="col-md-12">
 			    <table class="table">
@@ -253,6 +272,10 @@
 			    <tr>
 			    	<td><?php echo $soul["name"] ?> - Stage <?php echo $soul["stage"] ?></td>
 			    	<th><?php echo $soul["point"] ?></th>
+			    </tr>
+			    <tr>
+			    	<td><?php echo $pet["name"] ?> - Stage <?php echo $pet["stage"] ?></td>
+			    	<th><?php echo $pet["point"] ?></th>
 			    </tr>
 			    </table>
 			</div>
