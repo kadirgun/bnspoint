@@ -157,26 +157,10 @@
 		<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-    
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/">Ana Sayfa</a></li>
-               </ul>
-      <form class="navbar-form navbar-right number-form">
-        <div class="form-group">
-          <input type="tel" class="form-control" id="tel" placeholder="Numara" name="tel">
-        </div>
-        <button type="submit" class="btn btn-default">Sorgula</button>
-      </form>
-    </div><!-- /.navbar-collapse -->
+   
   </div><!-- /.container-fluid -->
 </nav>		<div class="container">
-	<ol class="breadcrumb">
-	  <li class="active">Ana Sayfa</li>
-	</ol>
-	<div class="page-header"> <h1>Numara Sorgulama <small>Kimin Numarası?</small></h1> </div>
+	<div class="page-header"> <h1>Blade & Soul <small> Puan Hesaplama</small></h1> </div>
 	<div class="row">
 		<div class="col-md-12">
 		    <div class="well text-center">
@@ -184,9 +168,9 @@
 		        	<div class="row">
 					  <div class="col-lg-12">
 					    <div class="input-group">
-					      <input type="tel" id="tel" name="tel" class="form-control" placeholder="Numara">
+					      <input type="text" id="username" name="username" class="form-control" placeholder="Karakter Adı">
 					      <span class="input-group-btn">
-					        <button class="btn btn-primary" type="submit">Sorgula</button>
+					        <button class="btn btn-primary" type="submit">Hesapla</button>
 					      </span>
 					    </div>
 					  </div>
