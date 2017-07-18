@@ -15,8 +15,10 @@
 		$level = explode("HongmoonLevel ", $profile)[1];
 		$level = explode("<", $level)[0];
 		$level = intval($level);
+		$levelpoint = $level * 5;
 	}else{
 		$level = 0;
+		$levelpoint = 0;
 	}
 	
 
@@ -154,7 +156,7 @@
 		$belt["point"] = 0;
 	}
 
-	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"];
+	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"] + $levelpoint;
 ?>
 
 <html>
@@ -173,7 +175,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="container">
-		<div class="page-header"> <h1><?php echo $total ?>P <small> <?php echo $username ?> (HM<?php echo $level ?>)</small></h1> </div>
+		<div class="page-header"> <h1><?php echo $total ?>P <small> <?php echo $username ?> (HM<?php echo $level ?>=><?php echo $levelpoint; ?>)</small></h1> </div>
 		<div class="row">
 			<div class="col-md-12">
 			    <table class="table">
