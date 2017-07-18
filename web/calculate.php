@@ -171,27 +171,27 @@
 			    	<th>Puan</th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $weapon["name"] ?> Weapon</td>
+			    	<td><?php echo $weapon["name"] ?> Weapon Stage <?php echo $weapon["stage"] ?></td>
 			    	<th><?php echo $weapon["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $necklace["name"] ?> Necklace</td>
+			    	<td><?php echo $necklace["name"] ?> Necklace Stage <?php echo $necklace["stage"] ?></td>
 			    	<th><?php echo $necklace["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $ring["name"] ?> Ring</td>
+			    	<td><?php echo $ring["name"] ?> Ring Stage <?php echo $ring["stage"] ?></td>
 			    	<th><?php echo $ring["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $earring["name"] ?> Earring</td>
+			    	<td><?php echo $earring["name"] ?> Earring Stage <?php echo $earring["stage"] ?></td>
 			    	<th><?php echo $earring["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $bracelet["name"] ?> Bracelet</td>
+			    	<td><?php echo $bracelet["name"] ?> Bracelet Stage <?php echo $bracelet["stage"] ?></td>
 			    	<th><?php echo $bracelet["point"] ?></th>
 			    </tr>
 			    <tr>
-			    	<td><?php echo $belt["name"] ?> Belt</td>
+			    	<td><?php echo $belt["name"] ?> Belt Stage <?php echo $belt["stage"] ?></td>
 			    	<th><?php echo $belt["point"] ?></th>
 			    </tr>
 			    </table>
