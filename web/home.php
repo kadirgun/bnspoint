@@ -4,6 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+		if(location.protocol == "https:"){
+			window.location.protocol="http";
+		}
+	</script>
 	<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
 </head>
 	<body>
@@ -59,7 +64,7 @@
 					success:function(data){
 						for(i=0;i<data.front.length;i++){
 							var username = data.front[i][0];
-							$("suggest-list").append('<a href="/'+username+'">'+username+'</a>');
+							$("#suggest-list").append('<a class="list-group-item" href="/'+username+'">'+username+'</a>');
 						}
 					}
 				})
