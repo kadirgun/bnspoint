@@ -210,15 +210,15 @@
 		$pet["point"] = 11*3;
 	}else if(strpos($info, ">Loyal Pet Aura") !== false){
 		$pet["name"] = "Loyal Pet Aura";
-		$pet["stage"] = getStage("Loyal Pet Aura",$info);
+		$pet["stage"] = 0;
 		$pet["point"] = intval($pet["stage"])*3;
 	}else if(strpos($info, ">Gusty Pet Aura") !== false){
 		$pet["name"] = "Gusty Pet Aura";
-		$pet["stage"] = getStage("Gusty Pet Aura",$info);
+		$pet["stage"] = 0;
 		$pet["point"] = intval($pet["stage"])*3;
 	}else if(strpos($info, ">Furious Pet Aura") !== false){
 		$pet["name"] = "Furious Pet Aura";
-		$pet["stage"] = getStage("Furious Pet Aura",$info);
+		$pet["stage"] = 0;
 		$pet["point"] = intval($pet["stage"])*3;
 	}else if(strpos($info, ">Awakened Pet Aura") !== false){
 		$pet["name"] = "Awakened Pet Aura";
