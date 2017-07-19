@@ -53,7 +53,7 @@
 			$("#username").on("keyup", function(){
 				$("#suggest-list").html("");
 				var query = $("#username").val();
-				query = query.replaceAll(" ");
+				query = query.replaceAll(" ","");
 				jQuery.ajax({
 					url:"http://eu-search.ncsoft.com/openapi/suggest.jsp",
 					dataType:"jsonp",
