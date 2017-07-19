@@ -12,6 +12,7 @@
 	$belt = array();
 	$soul = array();
 	$pet = array();
+	$gem = array();
 
 	if(strpos($profile, "HongmoonLevel") !== false){
 		$level = explode("HongmoonLevel ", $profile)[1];
@@ -234,7 +235,29 @@
 		$pet["point"] = 0;
 	}
 
-	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"] + $soul["point"] + $pet["point"] + $levelpoint;
+	if(strpos($info, "Pentagonal Obsidian") !== false){
+		$gem["name"] = "Pentagonal Obsidian";
+		$gem["stage"] = 0;
+		$gem["point"] = 1*5;
+	}else if(strpos($info, "Hexagonal Obsidian") !== false){
+		$gem["name"] = "Hexagonal Obsidian";
+		$gem["stage"] = 0;
+		$gem["point"] = 2*5;
+	}else if(strpos($info, "Hexagonal Obsidian") !== false){
+		$gem["name"] = "Hexagonal Obsidian";
+		$gem["stage"] = 0;
+		$gem["point"] = 2*5;
+	}else if(strpos($info, "Heptagonal Obsidian") !== false){
+		$gem["name"] = "Heptagonal Obsidian";
+		$gem["stage"] = 0;
+		$gem["point"] = 3*5;
+	}else{
+		$gem["name"] = "Unrated Gem";
+		$gem["stage"] = 0;
+		$gem["point"] = 0;
+	}
+
+	$total = $weapon["point"] + $necklace["point"] + $ring["point"] + $earring["point"] + $bracelet["point"] + $belt["point"] + $soul["point"] + $pet["point"] + $gem["point"] + $levelpoint;
 ?>
 
 <html>
@@ -292,6 +315,10 @@
 			    <tr>
 			    	<td><?php echo $pet["name"] ?> - Stage <?php echo $pet["stage"] ?></td>
 			    	<th><?php echo $pet["point"] ?></th>
+			    </tr>
+			    <tr>
+			    	<td><?php echo $gem["name"] ?></td>
+			    	<th><?php echo $gem["point"] ?></th>
 			    </tr>
 			    </table>
 			</div>
