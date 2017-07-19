@@ -52,6 +52,8 @@
 
 			$("#username").on("keyup", function(){
 				$("#suggest-list").html("");
+				var query = $("#username").val();
+				query = query.replaceAll(" ");
 				jQuery.ajax({
 					url:"http://eu-search.ncsoft.com/openapi/suggest.jsp",
 					dataType:"jsonp",
@@ -59,7 +61,7 @@
 						site:"bns",
 						display:10,
 						collection:"bnsusersuggest",
-						query:$("#username").val()
+						query:
 					},
 					success:function(data){
 						for(i=0;i<data.front.length;i++){
@@ -69,6 +71,11 @@
 					}
 				})
 			});
+
+			String.prototype.replaceAll = function(search, replacement) {
+			    var target = this;
+			    return target.replace(new RegExp(search, 'g'), replacement);
+			};
 		</script>
 </body>
 </html>
