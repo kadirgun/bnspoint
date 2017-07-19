@@ -61,7 +61,7 @@
 						site:"bns",
 						display:10,
 						collection:"bnsusersuggest",
-						query:
+						query:query
 					},
 					success:function(data){
 						for(i=0;i<data.front.length;i++){
