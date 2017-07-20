@@ -242,15 +242,11 @@
 	}else if(strpos($info, "Hexagonal Obsidian") !== false){
 		$gem["name"] = "Hexagonal Obsidian";
 		$gem["stage"] = 0;
-		$gem["point"] = 2*5;
-	}else if(strpos($info, "Hexagonal Obsidian") !== false){
-		$gem["name"] = "Hexagonal Obsidian";
-		$gem["stage"] = 0;
-		$gem["point"] = 2*5;
+		$gem["point"] = 3*5;
 	}else if(strpos($info, "Heptagonal Obsidian") !== false){
 		$gem["name"] = "Heptagonal Obsidian";
 		$gem["stage"] = 0;
-		$gem["point"] = 3*5;
+		$gem["point"] = 9*5;
 	}else{
 		$gem["name"] = "Unrated Gem";
 		$gem["stage"] = 0;
