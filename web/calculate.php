@@ -195,6 +195,14 @@
 		$soul["name"] = "Awakened Cosmic Soul";
 		$soul["stage"] = getStage("Awakened Cosmic Soul",$info);
 		$soul["point"] = (25+$soul["stage"])*5;
+	}else if(strpos($info, ">True Cosmic Soul") !== false){
+		$soul["name"] = "True Cosmic Soul";
+		$soul["stage"] = 0;
+		$soul["point"] = 35*5;
+	}else if(strpos($info, ">True Transcendent Soul") !== false){
+		$soul["name"] = "True Transcendent Soul";
+		$soul["stage"] = 0;
+		$soul["point"] = 35*5;
 	}else{
 		$soul["name"] = "Unrated Soul";
 		$soul["stage"] = 0;
