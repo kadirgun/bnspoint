@@ -111,8 +111,8 @@
 			        var self = this;
 			        var settings = $.extend({
 			            classBtn: '.bmd-modalButton',
-			            defaultW: 640,
-			            defaultH: 360
+			            defaultW: 1067,
+			            defaultH: 703
 			        }, options );
 			      
 			        $(settings.classBtn).on('click', function(e) {
