@@ -141,7 +141,7 @@
 			})(jQuery);
 
 			jQuery(document).ready(function(){
-			  jQuery("#myModal").,();
+			  jQuery("#myModal").bmdIframe();
 			});
 		</script>
 </body>
