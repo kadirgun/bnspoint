@@ -85,7 +85,7 @@
 			    return target.replace(new RegExp(search, 'g'), replacement);
 			};
 		</script>
-		<footer>Created by <a href="#" class=".bmd-modalButton" data-toggle="modal" data-bmdSrc="http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=Caddoc" data-bmdWidth="1067" data-bmdHeight="703" data-target="#myModal">Caddoc</a></footer>
+		<footer>Created by <a href="#" class="bmd-modalButton" data-toggle="modal" data-bmdSrc="http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=Caddoc" data-bmdWidth="1067" data-bmdHeight="703" data-target="#myModal">Caddoc</a></footer>
 
 		<div class="modal fade" id="myModal">
 			<div class="modal-dialog">
