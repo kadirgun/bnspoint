@@ -280,7 +280,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="container">
-		<div class="page-header"> <h1><?php echo $total ?>P <small> <?php echo $username ?> (HM<?php echo $level ?>=><?php echo $levelpoint; ?>P)</small></h1> </div>
+		<div class="page-header"> <h1><?php echo $total ?>P <small> <a href="#" class="bmd-modalButton" data-toggle="modal" data-bmdSrc="http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=<?php echo $username ?>" data-bmdWidth="1067" data-bmdHeight="703" data-target="#myModal"><?php echo $username ?></a> (HM<?php echo $level ?>=><?php echo $levelpoint; ?>P)</small></h1> </div>
 		<div class="row">
 			<div class="col-md-12">
 			    <table class="table">
@@ -330,5 +330,65 @@
 	</div>	
 	<script type="text/javascript" src="/assets/plugins/jquery.min.js"></script>
 	<script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<footer>Created by <a href="#" class="bmd-modalButton" data-toggle="modal" data-bmdSrc="http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=Caddoc" data-bmdWidth="1067" data-bmdHeight="703" data-target="#myModal">Caddoc</a></footer>
+
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog" style="width: 1128px;">
+				<div class="modal-content bmd-modalContent">
+
+					<div class="modal-body">
+		      
+		      <div class="close-button">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		      </div>
+		      <div class="embed-responsive embed-responsive-16by9" style="height: 715px;">
+						            <iframe class="embed-responsive-item" frameborder="0"></iframe>
+		      </div>
+					</div>
+
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<script type="text/javascript">
+			(function($) {
+			    $.fn.bmdIframe = function( options ) {
+			        var self = this;
+			        var settings = $.extend({
+			            classBtn: '.bmd-modalButton',
+			            defaultW: 1067,
+			            defaultH: 703
+			        }, options );
+			      
+			        $(settings.classBtn).on('click', function(e) {
+			          var allowFullscreen = $(this).attr('data-bmdVideoFullscreen') || false;
+			          
+			          var dataVideo = {
+			            'src': $(this).attr('data-bmdSrc'),
+			            'height': $(this).attr('data-bmdHeight') || settings.defaultH,
+			            'width': $(this).attr('data-bmdWidth') || settings.defaultW
+			          };
+			          
+			          if ( allowFullscreen ) dataVideo.allowfullscreen = "";
+			          
+			          // stampiamo i nostri dati nell'iframe
+			          $(self).find("iframe").attr(dataVideo);
+			        });
+			      
+			        // se si chiude la modale resettiamo i dati dell'iframe per impedire ad un video di continuare a riprodursi anche quando la modale è chiusa
+			        this.on('hidden.bs.modal', function(){
+			          $(this).find('iframe').html("").attr("src", "");
+			        });
+			      
+			        return this;
+			    };
+			  
+			})(jQuery);
+
+			jQuery(document).ready(function(){
+			  jQuery("#myModal").bmdIframe();
+			});
+		</script>
 </body>
 </html>
