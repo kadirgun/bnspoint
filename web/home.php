@@ -10,6 +10,14 @@
 		}
 	</script>
 	<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		footer{
+			position: fixed;
+		    bottom: 1px;
+		    text-align: center;
+		    width: 100%;
+		}
+	</style>
 </head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -77,5 +85,14 @@
 			    return target.replace(new RegExp(search, 'g'), replacement);
 			};
 		</script>
+		<footer>Created by <a href="#" data-toggle="modal" data-target=".profile-modal">Caddoc</a></footer>
+
+		<div class="modal fade profile-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		      ...
+		    </div>
+		  </div>
+		</div>
 </body>
 </html>
