@@ -271,6 +271,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		footer{
+			position: fixed;
+		    bottom: 1px;
+		    text-align: center;
+		    width: 100%;
+		}
+	</style>
 </head>
 	<body>
 		<nav class="navbar navbar-default">
