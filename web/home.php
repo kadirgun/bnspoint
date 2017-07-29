@@ -88,7 +88,7 @@
 		<footer>Created by <a href="#" class="bmd-modalButton" data-toggle="modal" data-bmdSrc="http://eu-bns.ncsoft.com/ingame/bs/character/profile?c=Caddoc" data-bmdWidth="1067" data-bmdHeight="703" data-target="#myModal">Caddoc</a></footer>
 
 		<div class="modal fade" id="myModal">
-			<div class="modal-dialog">
+			<div class="modal-dialog" style="width: 1128px;">
 				<div class="modal-content bmd-modalContent">
 
 					<div class="modal-body">
@@ -96,7 +96,7 @@
 		      <div class="close-button">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		      </div>
-		      <div class="embed-responsive embed-responsive-16by9">
+		      <div class="embed-responsive embed-responsive-16by9" style="height: 715px;">
 						            <iframe class="embed-responsive-item" frameborder="0"></iframe>
 		      </div>
 					</div>
